@@ -1,5 +1,5 @@
 ### Hello :)
-This repo contains some boilerplate stuff for quickstart of a Redux based ReactJS project.
+This repo contains some boilerplate stuff for quickstart of a Redux based ReactJS project. This code was written based on tutorial by Dev Ed (https://www.youtube.com/watch?v=CVpUuw9XSjY) .
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
