@@ -1,3 +1,7 @@
+### Hello :)
+This repo contains some boilerplate stuff for quickstart of a Redux based ReactJS project.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
