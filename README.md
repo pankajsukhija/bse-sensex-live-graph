@@ -1,5 +1,10 @@
 ### Hello :)
-This repo contains some boilerplate stuff for quickstart of a Redux based ReactJS project. This code was written based on tutorial by Dev Ed (https://www.youtube.com/watch?v=CVpUuw9XSjY) .
+
+This is a real-time graph of SENSEX using ReactJS , Chart.js and WebSockets. Redux is used only for learning purpose. And I have no idea why this text is in quotes.
+
+![](gif1.gif)
+
+~~This repo contains some boilerplate stuff for quickstart of a Redux based ReactJS project. This code was written based on tutorial by Dev Ed (https://www.youtube.com/watch?v=CVpUuw9XSjY) .~~
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
