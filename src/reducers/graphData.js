@@ -12,6 +12,8 @@ const graphData = {
     }]
 }
 
+// Note to Myself.
+// A reducer must have a check for action type, otherwise it will be called by all actions every time.
 const graphDataReducer = (state = graphData, action) => {
     // let newState = state
     // let timestamp = Date.now().toString()
@@ -22,13 +24,16 @@ const graphDataReducer = (state = graphData, action) => {
 
     if (action.type === 'appendToGraphData'){ // Now I know why it is required :P
         let timestamp = Date.now().toString()
-        if (state.labels.length > 19){
-            // Currently Not wrking 
+        if (state.labels.length > 80){
+            // Now it's working :)
+            // Thanks to https://www.freecodecamp.org/forum/t/redux-remove-item-from-array/210837/2
             console.log('graphDataReducer : greater than 5 ')
             // Remove first object when lenght is greater than `x`
             return {
             // https://www.freecodecamp.org/forum/t/redux-remove-an-item-from-an-array-challenge-help/203038/5
-                labels: [...state.labels, timestamp],
+                labels: [...state.labels.filter((elem, idx) => {
+                    return idx !== 0
+                }), timestamp],
                 // Very inefficent - Complexity = `n`
                 datasets: [{
                     fill: false,
@@ -36,8 +41,10 @@ const graphDataReducer = (state = graphData, action) => {
                     borderWidth : 3,
                     // steppedLine : true,
                     label: 'Sensex Live',
-                    // Added randomness for testing when market is cloased. :P
-                    data: [...state.datasets[0].data, {x : parseInt(timestamp), y : action.newAddedValue  + Math.floor((Math.random() * 1000))}],
+                    
+                    data: [...state.datasets[0].data.filter((elem, idx) => {
+                        return idx !== 0
+                    }), {x : parseInt(timestamp), y : action.newAddedValue}],
                 }]
             }
         }
@@ -52,8 +59,9 @@ const graphDataReducer = (state = graphData, action) => {
                 borderWidth : 3,
                 // steppedLine : true,
                 label: 'Sensex Live',
-        
-                data: [...state.datasets[0].data, {x : parseInt(timestamp), y : action.newAddedValue + Math.floor((Math.random() * 1000))}],
+                // Add randomness for testing when market is cloased. :P
+                //  + Math.floor((Math.random() * 1000))
+                data: [...state.datasets[0].data, {x : parseInt(timestamp), y : action.newAddedValue}],
             }]
         }
     }

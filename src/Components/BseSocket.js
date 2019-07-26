@@ -34,6 +34,7 @@ class BseSocket extends React.Component {
             },
 
             graphOptions : {
+                animation: false,
                 layout: {
                     padding: {
                         top: 100,
